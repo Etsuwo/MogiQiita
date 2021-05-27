@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		782A846F2658C833005DF61B /* MogiQiitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A846E2658C833005DF61B /* MogiQiitaApp.swift */; };
-		782A84712658C833005DF61B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A84702658C833005DF61B /* ContentView.swift */; };
+		782A84712658C833005DF61B /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A84702658C833005DF61B /* TopPageView.swift */; };
 		782A84732658C838005DF61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84722658C838005DF61B /* Assets.xcassets */; };
 		782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84752658C838005DF61B /* Preview Assets.xcassets */; };
+		786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786F51AF265E7A5F004F6B36 /* Pacifico.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		782A846B2658C833005DF61B /* MogiQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MogiQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782A846E2658C833005DF61B /* MogiQiitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MogiQiitaApp.swift; sourceTree = "<group>"; };
-		782A84702658C833005DF61B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		782A84702658C833005DF61B /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
 		782A84722658C838005DF61B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782A84752658C838005DF61B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		782A84772658C838005DF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786F51AF265E7A5F004F6B36 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Font/pacifico/pacifico/Pacifico.ttf; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				782A846E2658C833005DF61B /* MogiQiitaApp.swift */,
-				782A84702658C833005DF61B /* ContentView.swift */,
+				782A84702658C833005DF61B /* TopPageView.swift */,
 				782A84722658C838005DF61B /* Assets.xcassets */,
 				782A84772658C838005DF61B /* Info.plist */,
+				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
 			);
 			path = MogiQiita;
@@ -67,6 +70,14 @@
 				782A84752658C838005DF61B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		786F51AD265E7903004F6B36 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				786F51AF265E7A5F004F6B36 /* Pacifico.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +139,7 @@
 			files = (
 				782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */,
 				782A84732658C838005DF61B /* Assets.xcassets in Resources */,
+				786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				782A84712658C833005DF61B /* ContentView.swift in Sources */,
+				782A84712658C833005DF61B /* TopPageView.swift in Sources */,
 				782A846F2658C833005DF61B /* MogiQiitaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

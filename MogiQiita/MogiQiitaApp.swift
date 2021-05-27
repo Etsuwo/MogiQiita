@@ -11,7 +11,7 @@ import SwiftUI
 struct MogiQiitaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TopPageView()
         }
     }
 }
