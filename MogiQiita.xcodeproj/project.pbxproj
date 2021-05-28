@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,17 @@
 		782A84732658C838005DF61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84722658C838005DF61B /* Assets.xcassets */; };
 		782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84752658C838005DF61B /* Preview Assets.xcassets */; };
 		786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786F51AF265E7A5F004F6B36 /* Pacifico.ttf */; };
+		786F51BD265F5052004F6B36 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F51BC265F5052004F6B36 /* WebView.swift */; };
+		78F786B8265F7D9400866080 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786B7265F7D9400866080 /* Request.swift */; };
+		78F786C5265FF26E00866080 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 78F786C4265FF26E00866080 /* .env */; };
+		78F786CD2660BE5F00866080 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786CC2660BE5F00866080 /* UserInfo.swift */; };
+		78F786D22660D32900866080 /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786D12660D32900866080 /* FeedPageView.swift */; };
+		DE836F0C3FADF1232F38D8A6 /* Pods_MogiQiita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B41F68776887DF460AE27D8 /* Pods_MogiQiita.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E58CB4F449F3B8EAFDA0C28 /* Pods-MogiQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogiQiita.release.xcconfig"; path = "Target Support Files/Pods-MogiQiita/Pods-MogiQiita.release.xcconfig"; sourceTree = "<group>"; };
+		3B41F68776887DF460AE27D8 /* Pods_MogiQiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MogiQiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		782A846B2658C833005DF61B /* MogiQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MogiQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782A846E2658C833005DF61B /* MogiQiitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MogiQiitaApp.swift; sourceTree = "<group>"; };
 		782A84702658C833005DF61B /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
@@ -22,6 +30,12 @@
 		782A84752658C838005DF61B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		782A84772658C838005DF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786F51AF265E7A5F004F6B36 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Font/pacifico/pacifico/Pacifico.ttf; sourceTree = SOURCE_ROOT; };
+		786F51BC265F5052004F6B36 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		78F786B7265F7D9400866080 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		78F786C4265FF26E00866080 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		78F786CC2660BE5F00866080 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		78F786D12660D32900866080 /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
+		8DE247FCF98589FE3A6234E0 /* Pods-MogiQiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogiQiita.debug.xcconfig"; path = "Target Support Files/Pods-MogiQiita/Pods-MogiQiita.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE836F0C3FADF1232F38D8A6 /* Pods_MogiQiita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68DB51BF845AD29D67AFD278 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DE247FCF98589FE3A6234E0 /* Pods-MogiQiita.debug.xcconfig */,
+				1E58CB4F449F3B8EAFDA0C28 /* Pods-MogiQiita.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		782A84622658C833005DF61B = {
 			isa = PBXGroup;
 			children = (
 				782A846D2658C833005DF61B /* MogiQiita */,
 				782A846C2658C833005DF61B /* Products */,
+				68DB51BF845AD29D67AFD278 /* Pods */,
+				F7A0F4516BF76632D263634C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,9 +81,13 @@
 			isa = PBXGroup;
 			children = (
 				782A846E2658C833005DF61B /* MogiQiitaApp.swift */,
-				782A84702658C833005DF61B /* TopPageView.swift */,
+				78F786CF2660D2D500866080 /* TopPage */,
+				78F786D02660D30400866080 /* FeedPage */,
+				78F786CC2660BE5F00866080 /* UserInfo.swift */,
+				78F786B7265F7D9400866080 /* Request.swift */,
 				782A84722658C838005DF61B /* Assets.xcassets */,
 				782A84772658C838005DF61B /* Info.plist */,
+				78F786C4265FF26E00866080 /* .env */,
 				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
 			);
@@ -80,6 +110,31 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		78F786CF2660D2D500866080 /* TopPage */ = {
+			isa = PBXGroup;
+			children = (
+				782A84702658C833005DF61B /* TopPageView.swift */,
+				786F51BC265F5052004F6B36 /* WebView.swift */,
+			);
+			path = TopPage;
+			sourceTree = "<group>";
+		};
+		78F786D02660D30400866080 /* FeedPage */ = {
+			isa = PBXGroup;
+			children = (
+				78F786D12660D32900866080 /* FeedPageView.swift */,
+			);
+			path = FeedPage;
+			sourceTree = "<group>";
+		};
+		F7A0F4516BF76632D263634C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B41F68776887DF460AE27D8 /* Pods_MogiQiita.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 782A847A2658C838005DF61B /* Build configuration list for PBXNativeTarget "MogiQiita" */;
 			buildPhases = (
+				9025F8EC1206B6D5FA0A350D /* [CP] Check Pods Manifest.lock */,
 				782A84672658C833005DF61B /* Sources */,
 				782A84682658C833005DF61B /* Frameworks */,
 				782A84692658C833005DF61B /* Resources */,
+				39F010739CDFFDE633A17F96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,17 +197,64 @@
 				782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */,
 				782A84732658C838005DF61B /* Assets.xcassets in Resources */,
 				786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */,
+				78F786C5265FF26E00866080 /* .env in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F010739CDFFDE633A17F96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MogiQiita/Pods-MogiQiita-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MogiQiita/Pods-MogiQiita-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MogiQiita/Pods-MogiQiita-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9025F8EC1206B6D5FA0A350D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MogiQiita-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		782A84672658C833005DF61B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786F51BD265F5052004F6B36 /* WebView.swift in Sources */,
+				78F786D22660D32900866080 /* FeedPageView.swift in Sources */,
+				78F786B8265F7D9400866080 /* Request.swift in Sources */,
 				782A84712658C833005DF61B /* TopPageView.swift in Sources */,
+				78F786CD2660BE5F00866080 /* UserInfo.swift in Sources */,
 				782A846F2658C833005DF61B /* MogiQiitaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +380,7 @@
 		};
 		782A847B2658C838005DF61B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DE247FCF98589FE3A6234E0 /* Pods-MogiQiita.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +403,7 @@
 		};
 		782A847C2658C838005DF61B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E58CB4F449F3B8EAFDA0C28 /* Pods-MogiQiita.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
