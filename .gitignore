@@ -24,5 +24,4 @@ Pods/*
 !.gitkeep
 .DS_Store
 Images/
-Font/
 MogiQiita/.env
