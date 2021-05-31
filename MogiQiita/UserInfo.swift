@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Combine
 
-class UserInfo {
+class UserInfo: ObservableObject {
     static let shared = UserInfo()
     private init() {}
     
+    @Published var isAccessTokenSet: Bool = false
     var accessToken: String = ""
 }
  

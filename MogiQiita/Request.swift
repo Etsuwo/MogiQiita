@@ -53,6 +53,7 @@ struct GetAccessTokenRequest {
                 print("##### success exec() in GetAccessTokenRequest #####")
                 print(json)
                 UserInfo.shared.accessToken = json["token"].stringValue
+                UserInfo.shared.isAccessTokenSet = true
                 completion(.success(data))
             case .failure(let error):
                 print(error.localizedDescription)

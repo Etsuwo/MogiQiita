@@ -10,7 +10,8 @@ import SwiftUI
 struct TopPageView: View {
     @State private var showingModal = false
     @State private var showingErrorAlert = false
-    @State private var transitionFeedPage = false
+    @State private var enterWithNoAccessToken = false
+    @ObservedObject private var userInfo = UserInfo.shared
     
     var body: some View {
         NavigationView {
@@ -44,7 +45,7 @@ struct TopPageView: View {
                                 .cornerRadius(25)
                         })
                         .sheet(isPresented: $showingModal, content: {
-                            WebView(showingModal: $showingModal, showingErrorAlert: $showingErrorAlert, transitionFeedPage: $transitionFeedPage, url: AuthorizeRequest().URL)
+                            WebView(showingModal: $showingModal, showingErrorAlert: $showingErrorAlert, transitionFeedPage: $userInfo.isAccessTokenSet, url: AuthorizeRequest().URL)
                         })
                         .alert(isPresented: $showingErrorAlert, content: {
                             Alert(title: Text("認証エラー"))
@@ -53,7 +54,7 @@ struct TopPageView: View {
                         .padding()
                         
                         Button(action: {
-                            self.transitionFeedPage.toggle()
+                            enterWithNoAccessToken.toggle()
                         }, label: {
                             Text("ログインせずに利用する")
                                 .font(.system(size: 14))
@@ -63,7 +64,7 @@ struct TopPageView: View {
                         
                         NavigationLink(
                             destination: FeedPageView(),
-                            isActive: $transitionFeedPage,
+                            isActive: $userInfo.isAccessTokenSet,
                             label: {
                                 EmptyView()
                             })

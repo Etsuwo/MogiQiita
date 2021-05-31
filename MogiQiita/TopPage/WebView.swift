@@ -55,7 +55,6 @@ struct WebView: UIViewRepresentable {
                 GetAccessTokenRequest().exec(code: code, completion: {result in
                     switch result {
                     case .success(_):
-                        self.parent.transitionFeedPage.toggle()
                         print("##### sucess #####")
                         print("access token : " + UserInfo.shared.accessToken)
                     case .failure(_):

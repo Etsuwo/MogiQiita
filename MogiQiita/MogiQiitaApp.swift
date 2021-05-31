@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeychainAccess
 
 @main
 struct MogiQiitaApp: App {
@@ -20,7 +21,12 @@ struct MogiQiitaApp: App {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         readEnv()
+        obtainAccessTokenFromKeychain()
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        resisterAccessTokenToKeychain()
     }
     
     func readEnv() {
@@ -41,6 +47,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         } catch {
             fatalError(error.localizedDescription)
+        }
+    }
+    
+    func obtainAccessTokenFromKeychain() {
+        let keychain = Keychain(service: "com.gmail.324etsushi.MogiQiita")
+        guard let token = try? keychain.get("accessToken") else {
+            print("##### Cannot obtain access token from keycain ######")
+            return
+        }
+        print("##### success obtain access token from keychain #####")
+        print("token: " + token)
+        UserInfo.shared.accessToken = token
+        UserInfo.shared.isAccessTokenSet = true
+    }
+    
+    func resisterAccessTokenToKeychain() {
+        let keychain = Keychain(service: "com.gmail.324etsushi.MogiQiita")
+        do {
+            try keychain.set(UserInfo.shared.accessToken, key: "accessToken")
+        } catch {
+            print("##### failed to resister access token #####")
         }
     }
 }
