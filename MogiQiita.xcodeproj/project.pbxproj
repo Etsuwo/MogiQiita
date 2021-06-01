@@ -13,6 +13,10 @@
 		782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84752658C838005DF61B /* Preview Assets.xcassets */; };
 		786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786F51AF265E7A5F004F6B36 /* Pacifico.ttf */; };
 		786F51BD265F5052004F6B36 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F51BC265F5052004F6B36 /* WebView.swift */; };
+		78725078266609F800388D6E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78725077266609F800388D6E /* TabbarView.swift */; };
+		7872507B26660A7900388D6E /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872507A26660A7900388D6E /* MyPageView.swift */; };
+		7872507E26660A8300388D6E /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872507D26660A8300388D6E /* SettingPageView.swift */; };
+		7872508126660AB000388D6E /* TagPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872508026660AB000388D6E /* TagPageView.swift */; };
 		78F786B8265F7D9400866080 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786B7265F7D9400866080 /* Request.swift */; };
 		78F786C5265FF26E00866080 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 78F786C4265FF26E00866080 /* .env */; };
 		78F786CD2660BE5F00866080 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786CC2660BE5F00866080 /* UserInfo.swift */; };
@@ -31,6 +35,10 @@
 		782A84772658C838005DF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786F51AF265E7A5F004F6B36 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Font/pacifico/pacifico/Pacifico.ttf; sourceTree = SOURCE_ROOT; };
 		786F51BC265F5052004F6B36 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		78725077266609F800388D6E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		7872507A26660A7900388D6E /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		7872507D26660A8300388D6E /* SettingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageView.swift; sourceTree = "<group>"; };
+		7872508026660AB000388D6E /* TagPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPageView.swift; sourceTree = "<group>"; };
 		78F786B7265F7D9400866080 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78F786C4265FF26E00866080 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		78F786CC2660BE5F00866080 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 				78F786C4265FF26E00866080 /* .env */,
 				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
+				78725077266609F800388D6E /* TabbarView.swift */,
+				7872507A26660A7900388D6E /* MyPageView.swift */,
+				7872507D26660A8300388D6E /* SettingPageView.swift */,
+				7872508026660AB000388D6E /* TagPageView.swift */,
 			);
 			path = MogiQiita;
 			sourceTree = "<group>";
@@ -251,6 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				786F51BD265F5052004F6B36 /* WebView.swift in Sources */,
+				7872507B26660A7900388D6E /* MyPageView.swift in Sources */,
+				78725078266609F800388D6E /* TabbarView.swift in Sources */,
+				7872507E26660A8300388D6E /* SettingPageView.swift in Sources */,
+				7872508126660AB000388D6E /* TagPageView.swift in Sources */,
 				78F786D22660D32900866080 /* FeedPageView.swift in Sources */,
 				78F786B8265F7D9400866080 /* Request.swift in Sources */,
 				782A84712658C833005DF61B /* TopPageView.swift in Sources */,

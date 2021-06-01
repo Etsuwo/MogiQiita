@@ -54,7 +54,7 @@ struct TopPageView: View {
                     //iOS14.4以下では複数のsheetやfullScreenCoverを同一ビュー階層内で複数適用できない
                     EmptyView()
                         .fullScreenCover(isPresented: $userInfo.isAccessTokenSet, content: {
-                            FeedPageView()
+                            TabbarView()
                         })
                     
                     Button(action: {
@@ -66,7 +66,7 @@ struct TopPageView: View {
                             .foregroundColor(.white)
                     })
                     .fullScreenCover(isPresented: $enterWithNoAccessToken, content: {
-                        FeedPageView()
+                        TabbarView()
                     })
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
