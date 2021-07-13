@@ -5,6 +5,7 @@
 //  Created by 大谷悦志 on 2021/05/27.
 //
 
+import Foundation
 import Alamofire
 import SwiftyJSON
 
@@ -57,6 +58,38 @@ struct GetAccessTokenRequest {
                 completion(.success(data))
             case .failure(let error):
                 print(error.localizedDescription)
+                completion(.failure(error))
+            }
+        })
+    }
+}
+
+struct ArticleRequest {
+    private let path = "/items"
+    private var url: String {
+        return APIEndPoint.baseURL + path
+    }
+    private let method: HTTPMethod = .get
+    private var header: HTTPHeaders {
+            return [
+                .authorization(bearerToken: UserInfo.shared.accessToken),
+                .contentType("application/json")]
+    }
+    private let parameters: [String: Any] = ["page": 1, "per_page": 100]
+    
+    func exec(completion: @escaping (_ result: Result<Any, Error>) -> ()){
+        AF.request(self.url, method: self.method, parameters: self.parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
+            switch response.result {
+            case .success(let data):
+                guard let data = data else {
+                    print("##### failed to Article request #####")
+                    return
+                }
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let articles = try? decoder.decode([Article].self, from: data)
+                completion(.success(articles ?? []))
+            case .failure(let error):
                 completion(.failure(error))
             }
         })
