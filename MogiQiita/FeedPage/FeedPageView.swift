@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct FeedPageView: View {
+    @State var searchText: String = ""
+    @ObservedObject var viewModel = FeedPageViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                    .padding(.leading, 8)
+                TextField("Search", text: $searchText)
+                    .padding(.vertical, 8)
+            }
+            .background(Color(#colorLiteral(red: 0.9384178519, green: 0.9356803298, blue: 0.9419459105, alpha: 1)))
+            .cornerRadius(8)
+            .padding(.horizontal)
+            
+            List {
+                ForEach(viewModel.cellInfo ?? [], id: \.id, content: { info in
+                    FeedCell(info: info)
+                })
+                
+            }
+        }
+        .onAppear(perform: {
+            viewModel.fetchArticle()
+            print("after viewmodel exec()")
+        })
     }
 }
 

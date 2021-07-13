@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct FeedCell: View {
+    var info: FeedCellInfo
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            URLImageView(imageLoader: URLImageLoader(url: info.user.profileImageURL))
+                .frame(width: 38, height: 38, alignment: .center)
+                .clipShape(Circle())
+                
+            VStack(alignment: .leading) {
+                Text(info.title)
+                    .lineLimit(2)
+                HStack {
+                    Text("@\(info.user.id) 投稿日: \(info.createdAt)")
+                }
+                .lineLimit(1)
+                .font(.system(size: 12))
+                .foregroundColor(.gray)
+            }
+            
+            Spacer()
+        }
     }
 }
-
+/*
 struct FeedCell_Previews: PreviewProvider {
     static var previews: some View {
-        FeedCell()
+        FeedCell(info: FeedCellInfo(article: Article(id: "hogehoge", createdAt: Date(), title: "hogehoge", url: "hogehoge", user: User(id: "hogehoge", name: "hogehoge"))))
+        
     }
 }
+*/
