@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7801C055269DAF58005C4453 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801C054269DAF58005C4453 /* URLImageView.swift */; };
 		782A846F2658C833005DF61B /* MogiQiitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A846E2658C833005DF61B /* MogiQiitaApp.swift */; };
 		782A84712658C833005DF61B /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A84702658C833005DF61B /* TopPageView.swift */; };
 		782A84732658C838005DF61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84722658C838005DF61B /* Assets.xcassets */; };
@@ -17,6 +18,10 @@
 		7872507B26660A7900388D6E /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872507A26660A7900388D6E /* MyPageView.swift */; };
 		7872507E26660A8300388D6E /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872507D26660A8300388D6E /* SettingPageView.swift */; };
 		7872508126660AB000388D6E /* TagPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872508026660AB000388D6E /* TagPageView.swift */; };
+		788AE6A62696E952001C6FEE /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AE6A52696E952001C6FEE /* FeedCell.swift */; };
+		788AE6AE2696F6C0001C6FEE /* FeedPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AE6AD2696F6C0001C6FEE /* FeedPageViewModel.swift */; };
+		788AE6B22696F8DF001C6FEE /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AE6B12696F8DF001C6FEE /* Article.swift */; };
+		788AE6B62697029E001C6FEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AE6B52697029E001C6FEE /* User.swift */; };
 		78F786B8265F7D9400866080 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786B7265F7D9400866080 /* Request.swift */; };
 		78F786C5265FF26E00866080 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 78F786C4265FF26E00866080 /* .env */; };
 		78F786CD2660BE5F00866080 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F786CC2660BE5F00866080 /* UserInfo.swift */; };
@@ -27,6 +32,7 @@
 /* Begin PBXFileReference section */
 		1E58CB4F449F3B8EAFDA0C28 /* Pods-MogiQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MogiQiita.release.xcconfig"; path = "Target Support Files/Pods-MogiQiita/Pods-MogiQiita.release.xcconfig"; sourceTree = "<group>"; };
 		3B41F68776887DF460AE27D8 /* Pods_MogiQiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MogiQiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7801C054269DAF58005C4453 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		782A846B2658C833005DF61B /* MogiQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MogiQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782A846E2658C833005DF61B /* MogiQiitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MogiQiitaApp.swift; sourceTree = "<group>"; };
 		782A84702658C833005DF61B /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
@@ -39,6 +45,10 @@
 		7872507A26660A7900388D6E /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		7872507D26660A8300388D6E /* SettingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageView.swift; sourceTree = "<group>"; };
 		7872508026660AB000388D6E /* TagPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPageView.swift; sourceTree = "<group>"; };
+		788AE6A52696E952001C6FEE /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		788AE6AD2696F6C0001C6FEE /* FeedPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageViewModel.swift; sourceTree = "<group>"; };
+		788AE6B12696F8DF001C6FEE /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		788AE6B52697029E001C6FEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		78F786B7265F7D9400866080 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		78F786C4265FF26E00866080 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		78F786CC2660BE5F00866080 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -91,8 +101,10 @@
 				782A846E2658C833005DF61B /* MogiQiitaApp.swift */,
 				78F786CF2660D2D500866080 /* TopPage */,
 				78F786D02660D30400866080 /* FeedPage */,
+				788AE6B02696F8B3001C6FEE /* Models */,
 				78F786CC2660BE5F00866080 /* UserInfo.swift */,
 				78F786B7265F7D9400866080 /* Request.swift */,
+				7801C054269DAF58005C4453 /* URLImageView.swift */,
 				782A84722658C838005DF61B /* Assets.xcassets */,
 				782A84772658C838005DF61B /* Info.plist */,
 				78F786C4265FF26E00866080 /* .env */,
@@ -122,6 +134,15 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		788AE6B02696F8B3001C6FEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				788AE6B12696F8DF001C6FEE /* Article.swift */,
+				788AE6B52697029E001C6FEE /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		78F786CF2660D2D500866080 /* TopPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				78F786D12660D32900866080 /* FeedPageView.swift */,
+				788AE6A52696E952001C6FEE /* FeedCell.swift */,
+				788AE6AD2696F6C0001C6FEE /* FeedPageViewModel.swift */,
 			);
 			path = FeedPage;
 			sourceTree = "<group>";
@@ -262,10 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788AE6B22696F8DF001C6FEE /* Article.swift in Sources */,
 				786F51BD265F5052004F6B36 /* WebView.swift in Sources */,
 				7872507B26660A7900388D6E /* MyPageView.swift in Sources */,
 				78725078266609F800388D6E /* TabbarView.swift in Sources */,
+				788AE6AE2696F6C0001C6FEE /* FeedPageViewModel.swift in Sources */,
 				7872507E26660A8300388D6E /* SettingPageView.swift in Sources */,
+				788AE6B62697029E001C6FEE /* User.swift in Sources */,
+				788AE6A62696E952001C6FEE /* FeedCell.swift in Sources */,
+				7801C055269DAF58005C4453 /* URLImageView.swift in Sources */,
 				7872508126660AB000388D6E /* TagPageView.swift in Sources */,
 				78F786D22660D32900866080 /* FeedPageView.swift in Sources */,
 				78F786B8265F7D9400866080 /* Request.swift in Sources */,
