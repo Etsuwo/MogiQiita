@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedPageView: View {
     @State var searchText: String = ""
-    @ObservedObject var viewModel = FeedPageViewModel()
+    @StateObject var viewModel = FeedPageViewModel()
     
     var body: some View {
         VStack {
@@ -25,16 +25,16 @@ struct FeedPageView: View {
             .padding(.horizontal)
             
             List {
-                ForEach(viewModel.cellInfo ?? [], id: \.id, content: { info in
+                ForEach(viewModel.cellInfo, id: \.id, content: { info in
                     FeedCell(info: info)
+                        .onAppear(perform: {
+                            if viewModel.cellInfo[viewModel.pageNationIndex].id == info.id {
+                                viewModel.fetchArticle()
+                            }
+                        })
                 })
-                
             }
         }
-        .onAppear(perform: {
-            viewModel.fetchArticle()
-            print("after viewmodel exec()")
-        })
     }
 }
 

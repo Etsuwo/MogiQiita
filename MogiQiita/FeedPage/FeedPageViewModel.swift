@@ -9,21 +9,44 @@ import SwiftUI
 import Combine
 
 class FeedPageViewModel: ObservableObject {
-    @Published var cellInfo: [FeedCellInfo]?
+    @Published var cellInfo: [FeedCellInfo] = []
+    private var apiLoadingStatus: APILoadingStatus = .initial
+    private var nextPage = 1
+    var pageNationIndex: Int {
+        return cellInfo.count - 10
+    }
+    
+    init() {
+        print("##### called init #####")
+        fetchArticle()
+    }
     
     func fetchArticle() {
-        ArticleRequest().exec(completion: { result in
+        if apiLoadingStatus == .fetching || apiLoadingStatus == .full {
+            return
+        }
+        apiLoadingStatus = .fetching
+        ArticleRequest().exec(page: nextPage, completion: { result in
             switch result {
             case .success(let data):
-                let articlesData = data as? [Article]
+                guard let articlesData = data as? [Article] else {
+                    return
+                }
+                if articlesData.isEmpty {
+                    self.apiLoadingStatus = .full
+                    return
+                }
                 let formatter = DateFormatter()
                 formatter.dateStyle = .medium
                 formatter.timeStyle = .none
                 formatter.locale = Locale(identifier: "ja_JP")
-                self.cellInfo = articlesData?.map { article in
+                self.cellInfo.append(contentsOf: articlesData.map { article in
                     return FeedCellInfo(article: article)
-                }
+                })
+                self.apiLoadingStatus = .loadMore
+                self.nextPage += 1
             case .failure(let error):
+                self.apiLoadingStatus = .error
                 print(error)
             }
         })

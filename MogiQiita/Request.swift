@@ -75,10 +75,11 @@ struct ArticleRequest {
                 .authorization(bearerToken: UserInfo.shared.accessToken),
                 .contentType("application/json")]
     }
-    private let parameters: [String: Any] = ["page": 1, "per_page": 100]
+    private let perPage = 50
     
-    func exec(completion: @escaping (_ result: Result<Any, Error>) -> ()){
-        AF.request(self.url, method: self.method, parameters: self.parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
+    func exec(page: Int, completion: @escaping (_ result: Result<Any, Error>) -> ()){
+        let parameters: [String: Any] = ["page": page, "per_page": perPage]
+        AF.request(self.url, method: self.method, parameters: parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
             switch response.result {
             case .success(let data):
                 guard let data = data else {
