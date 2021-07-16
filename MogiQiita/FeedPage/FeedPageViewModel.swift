@@ -51,14 +51,22 @@ class FeedPageViewModel: ObservableObject {
             }
         })
     }
+    
+    func reloadList(complete: @escaping() -> Void) {
+        cellInfo = []
+        nextPage = 1
+        fetchArticle()
+        complete()
+    }
 }
 
-struct FeedCellInfo {
+struct FeedCellInfo: Hashable {
     var id: String
     var createdAt: String
     var title: String
     var url: String
-    var user: User
+    var userID: String
+    var userImageURL: String
     
     init(article: Article) {
         let formatter = DateFormatter()
@@ -66,10 +74,10 @@ struct FeedCellInfo {
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "ja_JP")
         id = article.id
-        
         createdAt = formatter.string(from: article.createdAt)
         title = article.title
         url = article.url
-        user = article.user
+        userID = article.user.id
+        userImageURL = article.user.profileImageURL
     }
 }

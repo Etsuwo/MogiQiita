@@ -12,7 +12,7 @@ struct FeedCell: View {
         
     var body: some View {
         HStack {
-            URLImageView(imageLoader: URLImageLoader(url: info.user.profileImageURL))
+            URLImageView(imageLoader: URLImageLoader(url: info.userImageURL))
                 .frame(width: 38, height: 38, alignment: .center)
                 .clipShape(Circle())
                 
@@ -20,7 +20,7 @@ struct FeedCell: View {
                 Text(info.title)
                     .lineLimit(2)
                 HStack {
-                    Text("@\(info.user.id) 投稿日: \(info.createdAt)")
+                    Text("@\(info.userID) 投稿日: \(info.createdAt)")
                 }
                 .lineLimit(1)
                 .font(.system(size: 12))
