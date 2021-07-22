@@ -77,8 +77,11 @@ struct ArticleRequest {
     }
     private let perPage = 50
     
-    func exec(page: Int, completion: @escaping (_ result: Result<Any, Error>) -> ()){
-        let parameters: [String: Any] = ["page": page, "per_page": perPage]
+    func exec(page: Int, searchText: String, completion: @escaping (_ result: Result<Any, Error>) -> ()){
+        var parameters: [String: Any] = ["page": page, "per_page": perPage]
+        if !searchText.isEmpty {
+            parameters["query"] = searchText
+        }
         AF.request(self.url, method: self.method, parameters: parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
             switch response.result {
             case .success(let data):

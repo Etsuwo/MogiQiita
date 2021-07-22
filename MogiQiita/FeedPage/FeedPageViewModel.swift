@@ -10,8 +10,10 @@ import Combine
 
 class FeedPageViewModel: ObservableObject {
     @Published var cellInfo: [FeedCellInfo] = []
+    @Published var searchText: String = ""
     private var apiLoadingStatus: APILoadingStatus = .initial
     private var nextPage = 1
+    private var cancellable: AnyCancellable?
     var pageNationIndex: Int {
         return cellInfo.count - 10
     }
@@ -26,7 +28,7 @@ class FeedPageViewModel: ObservableObject {
             return
         }
         apiLoadingStatus = .fetching
-        ArticleRequest().exec(page: nextPage, completion: { result in
+        ArticleRequest().exec(page: nextPage, searchText: searchText, completion: { result in
             switch result {
             case .success(let data):
                 guard let articlesData = data as? [Article] else {
@@ -55,6 +57,7 @@ class FeedPageViewModel: ObservableObject {
     func reloadList(complete: @escaping() -> Void) {
         cellInfo = []
         nextPage = 1
+        apiLoadingStatus = .initial
         fetchArticle()
         complete()
     }
