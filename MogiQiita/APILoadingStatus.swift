@@ -11,6 +11,7 @@ enum APILoadingStatus {
     case initial
     case fetching
     case loadMore
+    case none
     case full
     case error
 }

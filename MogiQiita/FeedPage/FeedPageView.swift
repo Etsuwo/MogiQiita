@@ -26,20 +26,32 @@ struct FeedPageView: View {
             .onReceive(viewModel.$searchText.debounce(for: 0.3, scheduler: DispatchQueue.main), perform: { _ in
                 self.viewModel.reloadList()
             })
-            
-            List {
-                ForEach(viewModel.cellInfo, id: \.self, content: { info in
+            if viewModel.apiLoadingStatus == .none {
+                Spacer()
+                Text("検索にマッチする記事はありませんでした")
+                    .padding()
+                    .foregroundColor(.black)
+                    .font(.system(size: 14))
+                Text("検索条件を変えるなどして再度検索をしてください")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 12))
+                Spacer()
+            } else {
+                List(viewModel.cellInfo) { info in
                     FeedCell(info: info)
                         .onAppear(perform: {
+                            guard !viewModel.cellInfo.isEmpty else {
+                                return
+                            }
                             if viewModel.cellInfo[viewModel.pageNationIndex].id == info.id {
                                 viewModel.fetchArticle()
                             }
                         })
+                }
+                .pullToRefresh(isShowing: $viewModel.isRefresh, onRefresh: {
+                    viewModel.reloadList()
                 })
             }
-            .pullToRefresh(isShowing: $viewModel.isRefresh, onRefresh: {
-                viewModel.reloadList()
-            })
         }
     }
 }

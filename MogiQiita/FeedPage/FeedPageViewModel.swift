@@ -13,15 +13,17 @@ class FeedPageViewModel: ObservableObject {
     @Published var cellInfo: [FeedCellInfo] = []
     @Published var searchText: String = ""
     @Published var isRefresh: Bool = false
-    private var apiLoadingStatus: APILoadingStatus = .initial
+    private(set) var apiLoadingStatus: APILoadingStatus = .initial
     private var nextPage = 1
     private var request: DataRequest?
     var pageNationIndex: Int {
-        return cellInfo.count - 10
+        if cellInfo.count > 10 {
+            return cellInfo.count - 10
+        }
+        return 0
     }
     
     init() {
-        print("##### called init #####")
         fetchArticle()
     }
     
@@ -37,19 +39,24 @@ class FeedPageViewModel: ObservableObject {
                     return
                 }
                 if articlesData.isEmpty {
-                    self.apiLoadingStatus = .full
-                    return
+                    if self.cellInfo.isEmpty {
+                        self.apiLoadingStatus = .none
+                    } else {
+                        self.apiLoadingStatus = .full
+                    }
+                } else {
+                    let formatter = DateFormatter()
+                    formatter.dateStyle = .medium
+                    formatter.timeStyle = .none
+                    formatter.locale = Locale(identifier: "ja_JP")
+                    self.cellInfo.append(contentsOf: articlesData.map { article in
+                        return FeedCellInfo(article: article)
+                    })
+                    self.apiLoadingStatus = .loadMore
+                    self.nextPage += 1
                 }
-                let formatter = DateFormatter()
-                formatter.dateStyle = .medium
-                formatter.timeStyle = .none
-                formatter.locale = Locale(identifier: "ja_JP")
-                self.cellInfo.append(contentsOf: articlesData.map { article in
-                    return FeedCellInfo(article: article)
-                })
-                self.apiLoadingStatus = .loadMore
-                self.nextPage += 1
                 self.isRefresh = false
+                
             case .failure(let error):
                 self.apiLoadingStatus = .error
                 print(error)
@@ -66,7 +73,7 @@ class FeedPageViewModel: ObservableObject {
     }
 }
 
-struct FeedCellInfo: Hashable {
+struct FeedCellInfo: Hashable, Identifiable {
     var id: String
     var createdAt: String
     var title: String
