@@ -77,12 +77,12 @@ struct ArticleRequest {
     }
     private let perPage = 50
     
-    func exec(page: Int, searchText: String, completion: @escaping (_ result: Result<Any, Error>) -> ()){
+    func exec(page: Int, searchText: String, completion: @escaping (_ result: Result<Any, Error>) -> ()) ->DataRequest{
         var parameters: [String: Any] = ["page": page, "per_page": perPage]
         if !searchText.isEmpty {
             parameters["query"] = searchText
         }
-        AF.request(self.url, method: self.method, parameters: parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
+        let request = AF.request(self.url, method: self.method, parameters: parameters, encoding: URLEncoding.default, headers: self.header).response(completionHandler: { response in
             switch response.result {
             case .success(let data):
                 guard let data = data else {
@@ -97,5 +97,6 @@ struct ArticleRequest {
                 completion(.failure(error))
             }
         })
+        return request
     }
 }
