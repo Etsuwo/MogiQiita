@@ -12,6 +12,7 @@
 		782A84712658C833005DF61B /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782A84702658C833005DF61B /* TopPageView.swift */; };
 		782A84732658C838005DF61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84722658C838005DF61B /* Assets.xcassets */; };
 		782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84752658C838005DF61B /* Preview Assets.xcassets */; };
+		7832B64526B0345800CD5898 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B64426B0345800CD5898 /* ErrorView.swift */; };
 		78376ECC269FC88E00A45B97 /* APILoadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78376ECB269FC88E00A45B97 /* APILoadingStatus.swift */; };
 		786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786F51AF265E7A5F004F6B36 /* Pacifico.ttf */; };
 		786F51BD265F5052004F6B36 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F51BC265F5052004F6B36 /* WebView.swift */; };
@@ -40,6 +41,7 @@
 		782A84722658C838005DF61B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782A84752658C838005DF61B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		782A84772658C838005DF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7832B64426B0345800CD5898 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		78376ECB269FC88E00A45B97 /* APILoadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoadingStatus.swift; sourceTree = "<group>"; };
 		786F51AF265E7A5F004F6B36 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Font/pacifico/pacifico/Pacifico.ttf; sourceTree = SOURCE_ROOT; };
 		786F51BC265F5052004F6B36 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				78F786C4265FF26E00866080 /* .env */,
 				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
+				7832B64426B0345800CD5898 /* ErrorView.swift */,
 			);
 			path = MogiQiita;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				786F51BD265F5052004F6B36 /* WebView.swift in Sources */,
 				7872507B26660A7900388D6E /* MyPageView.swift in Sources */,
 				78725078266609F800388D6E /* TabbarView.swift in Sources */,
+				7832B64526B0345800CD5898 /* ErrorView.swift in Sources */,
 				788AE6AE2696F6C0001C6FEE /* FeedPageViewModel.swift in Sources */,
 				7872507E26660A8300388D6E /* SettingPageView.swift in Sources */,
 				788AE6B62697029E001C6FEE /* User.swift in Sources */,

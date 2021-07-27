@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import Alamofire
 
-class FeedPageViewModel: ObservableObject {
+class FeedPageViewModel: ObservableObject, ErrorViewModel {
     @Published var cellInfo: [FeedCellInfo] = []
     @Published var searchText: String = ""
     @Published var isRefresh: Bool = false
@@ -58,8 +58,10 @@ class FeedPageViewModel: ObservableObject {
                 self.isRefresh = false
                 
             case .failure(let error):
-                self.apiLoadingStatus = .error
-                print(error)
+                if let error = error.asAFError, !error.isExplicitlyCancelledError {
+                    self.apiLoadingStatus = .error
+                }
+                self.isRefresh = false
             }
         })
     }
@@ -70,6 +72,10 @@ class FeedPageViewModel: ObservableObject {
         nextPage = 1
         apiLoadingStatus = .initial
         fetchArticle()
+    }
+    
+    func reload() {
+        reloadList()
     }
 }
 
