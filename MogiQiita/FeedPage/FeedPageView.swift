@@ -10,7 +10,6 @@ import SwiftUIRefresh
 
 struct FeedPageView: View {
     @StateObject var viewModel = FeedPageViewModel()
-    @State var isRefresh = false
     
     var body: some View {
         VStack {
@@ -25,7 +24,7 @@ struct FeedPageView: View {
             .cornerRadius(8)
             .padding(.horizontal)
             .onReceive(viewModel.$searchText.debounce(for: 0.3, scheduler: DispatchQueue.main), perform: { _ in
-                self.viewModel.reloadList(complete: {})
+                self.viewModel.reloadList()
             })
             
             List {
@@ -38,10 +37,8 @@ struct FeedPageView: View {
                         })
                 })
             }
-            .pullToRefresh(isShowing: $isRefresh, onRefresh: {
-                viewModel.reloadList {
-                    isRefresh = false
-                }
+            .pullToRefresh(isShowing: $viewModel.isRefresh, onRefresh: {
+                viewModel.reloadList()
             })
         }
     }

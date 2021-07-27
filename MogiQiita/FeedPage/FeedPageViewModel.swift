@@ -12,6 +12,7 @@ import Alamofire
 class FeedPageViewModel: ObservableObject {
     @Published var cellInfo: [FeedCellInfo] = []
     @Published var searchText: String = ""
+    @Published var isRefresh: Bool = false
     private var apiLoadingStatus: APILoadingStatus = .initial
     private var nextPage = 1
     private var request: DataRequest?
@@ -48,6 +49,7 @@ class FeedPageViewModel: ObservableObject {
                 })
                 self.apiLoadingStatus = .loadMore
                 self.nextPage += 1
+                self.isRefresh = false
             case .failure(let error):
                 self.apiLoadingStatus = .error
                 print(error)
@@ -55,13 +57,12 @@ class FeedPageViewModel: ObservableObject {
         })
     }
     
-    func reloadList(complete: @escaping() -> Void) {
+    func reloadList() {
         request?.cancel()
         cellInfo = []
         nextPage = 1
         apiLoadingStatus = .initial
         fetchArticle()
-        complete()
     }
 }
 
