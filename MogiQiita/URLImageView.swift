@@ -28,20 +28,28 @@ struct URLImageView_Previews: PreviewProvider {
 
 class URLImageLoader: ObservableObject {
     @Published var image: Image?
+    static let ImageCache = NSCache<AnyObject, UIImage>()
     
     init(url: String) {
         guard let imageURL = URL(string: url) else {
             return
         }
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: imageURL) else {
-                return
-            }
+        if let cachedImage = URLImageLoader.ImageCache.object(forKey: imageURL as AnyObject) {
+            print("####### from cached !!!!!!!!!! #########")
             DispatchQueue.main.async {
-                guard let uiImage = UIImage(data: data) else {
+                self.image = Image(uiImage: cachedImage)
+            }
+        } else {
+            DispatchQueue.global().async {
+                guard let data = try? Data(contentsOf: imageURL),
+                      let uiImage = UIImage(data: data) else {
                     return
                 }
-                self.image = Image(uiImage: uiImage)
+                URLImageLoader.ImageCache.setObject(uiImage, forKey: imageURL as AnyObject)
+                print("####### cached Image ##########")
+                DispatchQueue.main.async {
+                    self.image = Image(uiImage: uiImage)
+                }
             }
         }
     }
