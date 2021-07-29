@@ -104,22 +104,17 @@
 			children = (
 				782A846E2658C833005DF61B /* MogiQiitaApp.swift */,
 				78F786CF2660D2D500866080 /* TopPage */,
+				78EF9B4326B2995100AA822A /* Tabbar */,
 				78F786D02660D30400866080 /* FeedPage */,
 				788AE6B02696F8B3001C6FEE /* Models */,
-				78F786CC2660BE5F00866080 /* UserInfo.swift */,
+				78EF9B4526B299B500AA822A /* OtherView */,
 				78376ECB269FC88E00A45B97 /* APILoadingStatus.swift */,
 				78F786B7265F7D9400866080 /* Request.swift */,
-				78725077266609F800388D6E /* TabbarView.swift */,
-				7872507A26660A7900388D6E /* MyPageView.swift */,
-				7872508026660AB000388D6E /* TagPageView.swift */,
-				7872507D26660A8300388D6E /* SettingPageView.swift */,
-				7801C054269DAF58005C4453 /* URLImageView.swift */,
 				782A84722658C838005DF61B /* Assets.xcassets */,
 				782A84772658C838005DF61B /* Info.plist */,
 				78F786C4265FF26E00866080 /* .env */,
 				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
-				7832B64426B0345800CD5898 /* ErrorView.swift */,
 			);
 			path = MogiQiita;
 			sourceTree = "<group>";
@@ -145,8 +140,29 @@
 			children = (
 				788AE6B12696F8DF001C6FEE /* Article.swift */,
 				788AE6B52697029E001C6FEE /* User.swift */,
+				78F786CC2660BE5F00866080 /* UserInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		78EF9B4326B2995100AA822A /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				78725077266609F800388D6E /* TabbarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		78EF9B4526B299B500AA822A /* OtherView */ = {
+			isa = PBXGroup;
+			children = (
+				7872507D26660A8300388D6E /* SettingPageView.swift */,
+				7872508026660AB000388D6E /* TagPageView.swift */,
+				7872507A26660A7900388D6E /* MyPageView.swift */,
+				7801C054269DAF58005C4453 /* URLImageView.swift */,
+				7832B64426B0345800CD5898 /* ErrorView.swift */,
+			);
+			path = OtherView;
 			sourceTree = "<group>";
 		};
 		78F786CF2660D2D500866080 /* TopPage */ = {
