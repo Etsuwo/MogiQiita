@@ -8,6 +8,7 @@ target 'MogiQiita' do
   pod 'Alamofire', '~> 5.2'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'KeychainAccess', '~> 4.2'
+  pod 'SwiftUIRefresh'
   # Pods for MogiQiita
 
 end
