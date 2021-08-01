@@ -54,7 +54,6 @@ struct GetAccessTokenRequest {
                 print("##### success exec() in GetAccessTokenRequest #####")
                 print(json)
                 UserInfo.shared.accessToken = json["token"].stringValue
-                UserInfo.shared.isAccessTokenSet = true
                 completion(.success(data))
             case .failure(let error):
                 print(error.localizedDescription)
@@ -71,9 +70,11 @@ struct ArticleRequest {
     }
     private let method: HTTPMethod = .get
     private var header: HTTPHeaders {
-            return [
-                .authorization(bearerToken: UserInfo.shared.accessToken),
-                .contentType("application/json")]
+        var header: HTTPHeaders = [.contentType("application/json")]
+        if UserInfo.shared.isLogin {
+            header.add(.authorization(bearerToken: UserInfo.shared.accessToken))
+        }
+        return header
     }
     private let perPage = 50
     

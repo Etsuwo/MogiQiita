@@ -12,7 +12,7 @@ class UserInfo: ObservableObject {
     static let shared = UserInfo()
     private init() {}
     
-    @Published var isAccessTokenSet: Bool = false
+    @Published var isLogin: Bool = false
     var accessToken: String = ""
 }
  

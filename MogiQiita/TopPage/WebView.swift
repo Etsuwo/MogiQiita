@@ -12,7 +12,6 @@ struct WebView: UIViewRepresentable {
     
     @Binding var showingModal: Bool
     @Binding var showingErrorAlert: Bool
-    @Binding var transitionFeedPage: Bool
     typealias UIViewType = WKWebView
     var url: String
     
@@ -57,6 +56,7 @@ struct WebView: UIViewRepresentable {
                     case .success(_):
                         print("##### sucess #####")
                         print("access token : " + UserInfo.shared.accessToken)
+                        UserInfo.shared.isLogin = true
                     case .failure(_):
                         self.parent.showingErrorAlert.toggle()
                     }

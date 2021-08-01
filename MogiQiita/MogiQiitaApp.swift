@@ -26,7 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        resisterAccessTokenToKeychain()
+        if UserInfo.shared.isLogin {
+            resisterAccessTokenToKeychain()
+        }
     }
     
     func readEnv() {
@@ -59,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("##### success obtain access token from keychain #####")
         print("token: " + token)
         UserInfo.shared.accessToken = token
-        UserInfo.shared.isAccessTokenSet = true
+        UserInfo.shared.isLogin = true
     }
     
     func resisterAccessTokenToKeychain() {

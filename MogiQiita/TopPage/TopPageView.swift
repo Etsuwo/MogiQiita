@@ -44,7 +44,7 @@ struct TopPageView: View {
                             .cornerRadius(25)
                     })
                     .sheet(isPresented: $showingModal, content: {
-                        WebView(showingModal: $showingModal, showingErrorAlert: $showingErrorAlert, transitionFeedPage: $userInfo.isAccessTokenSet, url: AuthorizeRequest().URL)
+                        WebView(showingModal: $showingModal, showingErrorAlert: $showingErrorAlert, url: AuthorizeRequest().URL)
                     })
                     .alert(isPresented: $showingErrorAlert, content: {
                         Alert(title: Text("認証エラー"))
@@ -53,7 +53,7 @@ struct TopPageView: View {
                     
                     //iOS14.4以下では複数のsheetやfullScreenCoverを同一ビュー階層内で複数適用できない
                     EmptyView()
-                        .fullScreenCover(isPresented: $userInfo.isAccessTokenSet, content: {
+                        .fullScreenCover(isPresented: $userInfo.isLogin, content: {
                             TabbarView()
                         })
                     
