@@ -43,12 +43,7 @@ struct FeedPageView: View {
                     List(viewModel.cellInfo) { info in
                         FeedCell(info: info)
                             .onAppear(perform: {
-                                guard !viewModel.cellInfo.isEmpty else {
-                                    return
-                                }
-                                if viewModel.cellInfo[viewModel.pageNationIndex].id == info.id {
-                                    viewModel.fetchArticle()
-                                }
+                                viewModel.pageNation(info: info)
                             })
                     }
                     .pullToRefresh(isShowing: $viewModel.isRefresh, onRefresh: {

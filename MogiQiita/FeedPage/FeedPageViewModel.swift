@@ -66,6 +66,15 @@ class FeedPageViewModel: ObservableObject, ErrorViewModel {
         })
     }
     
+    func pageNation(info: FeedCellInfo) {
+        guard !cellInfo.isEmpty else {
+            return
+        }
+        if cellInfo[pageNationIndex].id == info.id {
+            fetchArticle()
+        }
+    }
+    
     func reloadList() {
         request?.cancel()
         cellInfo = []
