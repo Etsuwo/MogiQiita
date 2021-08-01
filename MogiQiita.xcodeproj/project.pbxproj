@@ -14,6 +14,7 @@
 		782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782A84752658C838005DF61B /* Preview Assets.xcassets */; };
 		7832B64526B0345800CD5898 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B64426B0345800CD5898 /* ErrorView.swift */; };
 		78376ECC269FC88E00A45B97 /* APILoadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78376ECB269FC88E00A45B97 /* APILoadingStatus.swift */; };
+		786CCCED26B67A2200EAA182 /* .env.sample in Resources */ = {isa = PBXBuildFile; fileRef = 786CCCEC26B67A2200EAA182 /* .env.sample */; };
 		786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786F51AF265E7A5F004F6B36 /* Pacifico.ttf */; };
 		786F51BD265F5052004F6B36 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F51BC265F5052004F6B36 /* WebView.swift */; };
 		78725078266609F800388D6E /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78725077266609F800388D6E /* TabbarView.swift */; };
@@ -43,6 +44,7 @@
 		782A84772658C838005DF61B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7832B64426B0345800CD5898 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		78376ECB269FC88E00A45B97 /* APILoadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoadingStatus.swift; sourceTree = "<group>"; };
+		786CCCEC26B67A2200EAA182 /* .env.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env.sample; sourceTree = "<group>"; };
 		786F51AF265E7A5F004F6B36 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Font/pacifico/pacifico/Pacifico.ttf; sourceTree = SOURCE_ROOT; };
 		786F51BC265F5052004F6B36 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		78725077266609F800388D6E /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				782A84722658C838005DF61B /* Assets.xcassets */,
 				782A84772658C838005DF61B /* Info.plist */,
 				78F786C4265FF26E00866080 /* .env */,
+				786CCCEC26B67A2200EAA182 /* .env.sample */,
 				786F51AD265E7903004F6B36 /* Font */,
 				782A84742658C838005DF61B /* Preview Content */,
 			);
@@ -254,6 +257,7 @@
 				782A84762658C838005DF61B /* Preview Assets.xcassets in Resources */,
 				782A84732658C838005DF61B /* Assets.xcassets in Resources */,
 				786F51B0265E7A5F004F6B36 /* Pacifico.ttf in Resources */,
+				786CCCED26B67A2200EAA182 /* .env.sample in Resources */,
 				78F786C5265FF26E00866080 /* .env in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
